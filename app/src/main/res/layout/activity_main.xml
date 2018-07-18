@@ -170,18 +170,27 @@
     <LinearLayout
         android:id="@+id/linearLayout5"
         android:layout_width="115dp"
-        android:layout_height="160dp"
+        android:layout_height="233dp"
         android:layout_marginEnd="4dp"
         android:layout_marginRight="4dp"
+        android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout4">
 
         <Button
             android:id="@+id/equal"
             android:layout_width="match_parent"
-            android:layout_height="160dp"
-            android:layout_weight="2"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
             android:text="="
+            android:textSize="25sp" />
+
+        <Button
+            android:id="@+id/percentage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:text="%"
             android:textSize="25sp" />
 
 
@@ -196,7 +205,8 @@
         app:layout_constraintEnd_toStartOf="@+id/linearLayout5"
 
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout4">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout4"
+        >
 
 
 
@@ -224,9 +234,6 @@
         android:id="@+id/linearLayout8"
         android:layout_width="250dp"
         android:layout_height="80dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        app:layout_constraintEnd_toStartOf="@+id/linearLayout9"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout7">
 
@@ -266,29 +273,6 @@
             />
 
     </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout9"
-        android:layout_width="115dp"
-        android:layout_height="80dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout5">
-
-
-        <Button
-
-            android:textSize="25sp"
-            android:text="%"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </LinearLayout>
-
-
-
-
-
 
 
 </android.support.constraint.ConstraintLayout>

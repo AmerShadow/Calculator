@@ -10,7 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    Button b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,equal,plus,minus,multiplication,division,percentage,history;
+    Button b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,equal,plus,minus,multiplication,division,percentage,history,ac;
     TextView display;
     long temp;
     String TAG;
@@ -44,7 +44,9 @@ public class MainActivity extends AppCompatActivity {
         division=findViewById(R.id.division);
         TAG=MainActivity.class.getSimpleName();
         percentage=findViewById(R.id.percentage);
-        
+        intent=new Intent(MainActivity.this,Main2Activity.class);
+        history=findViewById(R.id.history);
+        ac=findViewById(R.id.ac);
     }
     public void myclick(){
         b0.setOnClickListener(new View.OnClickListener() {
@@ -149,7 +151,16 @@ public class MainActivity extends AppCompatActivity {
         history.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                startActivity(intent);
 
+            }
+        });
+        ac.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                str="";
+                temp=0;
+                display.setText(str);
             }
         });
     }
@@ -234,9 +245,11 @@ public class MainActivity extends AppCompatActivity {
 
             case  "%":
                 float per;
-                per=(temp*100)/Long.parseLong(str);
+                per= temp*100/Long.parseLong(str);
                 display.setText(Float.toString(per));
+                Log.d(TAG,"Per="+per);
                 operation="=";
+                break;
 
 
             case  "=":
